@@ -1,0 +1,33 @@
+# Python backend
+backend/ai_backend/.env
+backend/ai_backend/.venv/
+backend/ai_backend/__pycache__/
+backend/ai_backend/**/__pycache__/
+backend/ai_backend/*.pyc
+backend/ai_backend/**/*.pyc
+backend/.venv
+# Additional Python patterns (optional but recommended)
+backend/ai_backend/*.pyo
+backend/ai_backend/*.egg-info/
+backend/ai_backend/dist/
+backend/ai_backend/build/
+backend/ai_backend/.pytest_cache/
+backend/ai_backend/.coverage
+backend/ai_backend/htmlcov/
+
+# Frontend (add your frontend ignores here)
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
