@@ -1,0 +1,63 @@
+
+======================================================================
+POLICY EMBEDDING PIPELINE
+======================================================================
+
+This script will:
+1. Load all PDF files from policies/ directory
+2. Extract text and chunk documents
+3. Generate OpenAI embeddings
+4. Store in ChromaDB vector database
+
+Initializing RAG Agent...
+
+Found 3 policy documents:
+  1. Scootsurance QSR022206_updated.pdf
+  2. TravelEasy Pre-Ex Policy QTD032212-PX.pdf
+  3. TravelEasy Policy QTD032212.pdf
+
+----------------------------------------------------------------------
+ChromaDB will be created at:
+  /Users/ray/Desktop/hackdeez/backend/ai_backend/agents/rag_agent/chroma_db
+----------------------------------------------------------------------
+
+Proceed with embedding? (y/n): 
+======================================================================
+Starting Embedding Process...
+======================================================================
+============================================================
+Starting RAG Pipeline for Policy Documents
+============================================================
+Found 3 policy documents to process:
+  - Loading: Scootsurance QSR022206_updated.pdf (with table preservation)
+Warning: No languages specified, defaulting to English.
+    Loaded 1125 elements from Scootsurance QSR022206_updated.pdf
+  - Loading: TravelEasy Pre-Ex Policy QTD032212-PX.pdf (with table preservation)
+Warning: No languages specified, defaulting to English.
+    Loaded 2450 elements from TravelEasy Pre-Ex Policy QTD032212-PX.pdf
+  - Loading: TravelEasy Policy QTD032212.pdf (with table preservation)
+Warning: No languages specified, defaulting to English.
+    Loaded 2585 elements from TravelEasy Policy QTD032212.pdf
+
+Total documents loaded: 155
+
+Chunking 155 documents (table-aware)...
+Created 300 total chunks:
+  - 0 tables kept whole
+  - 300 text chunks created
+
+Creating vector store with 300 chunks...
+Vector store created and persisted to /Users/ray/Desktop/hackdeez/backend/ai_backend/agents/rag_agent/chroma_db
+
+============================================================
+RAG Pipeline Complete!
+============================================================
+
+======================================================================
+✓ EMBEDDING COMPLETED SUCCESSFULLY!
+======================================================================
+
+ChromaDB created at: /Users/ray/Desktop/hackdeez/backend/ai_backend/agents/rag_agent/chroma_db
+
+Next step:
+  Run 'python run_retrieval.py' to fill taxonomy conditions

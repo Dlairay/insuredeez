@@ -1,0 +1,373 @@
+{
+  "layer": "layer_1_general_conditions",
+  "conditions_tested": [
+    "trip_start_singapore",
+    "age_eligibility",
+    "good_health",
+    "child_accompaniment_requirement",
+    "pre_existing_conditions",
+    "travel_advisory_exclusion",
+    "awareness_of_circumstances",
+    "pre_trip_purchased",
+    "declaration_of_previous_insurance",
+    "medical_advice_and_treatment_restriction"
+  ],
+  "results": [
+    {
+      "condition": "trip_start_singapore",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "Your trip must begin in Singapore.\nThis Policy also covers a One-Way Trip, provided You have purchased the Policy in Singapore and the original point of departure of Your Scheduled Flight is Singapore.",
+          "parameters": {
+            "requirement": "trip must begin in Singapore",
+            "policy_purchase_location_for_one_way_trip": "Singapore",
+            "original_point_of_departure_for_one_way_trip": "Singapore"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "The round trip must begin and end in Singapore. An insured person is not covered for the entire trip if they leave Singapore before the start of the period of insurance. A journey or trip is defined as beginning at the time the insured person leaves their home or workplace within Singapore for the purpose of travelling abroad.",
+          "parameters": {
+            "origin_country": "Singapore",
+            "departure_timing_condition": "must not leave Singapore before the start of the period of insurance"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "1. The round trip must begin and end in Singapore.\n3. At the time you send us your application for this insurance, none of the intended insured persons have already left Singapore on any trip meant to be covered by this insurance. An insured person is not covered for the entire trip if they leave Singapore before the start of the period of insurance.",
+          "parameters": {
+            "trip_origin_and_destination": "Singapore",
+            "departure_timing_relative_to_policy": "must not have left Singapore before application or start of period of insurance"
+          }
+        }
+      }
+    },
+    {
+      "condition": "age_eligibility",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "To be eligible for cover under this Policy, You have to be aged over 1 month to 74 years old, before the start of Your trip.",
+          "parameters": {
+            "minimum_age": "over 1 month",
+            "maximum_age": "74 years old",
+            "age_assessment_timing": "before the start of Your trip"
+          }
+        },
+        "Product B": {
+          "condition_exist": false,
+          "original_text": "",
+          "parameters": {}
+        },
+        "Product C": {
+          "condition_exist": false,
+          "original_text": "",
+          "parameters": {}
+        }
+      }
+    },
+    {
+      "condition": "good_health",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "The insured persons must be in good health. At the time of Your trip, You must be medically fit to travel and not be aware of any circumstances which could lead to cancellation or disruption of the trip, otherwise Your claim will be rejected.",
+          "parameters": {
+            "health_status_requirement": "must be in good health and medically fit to travel",
+            "pre_existing_condition_lookback_period": "365 days prior to trip"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "The insured person must meet all the following conditions to be eligible for TravelEasy\u00ae Pre-Ex cover: ... 3. In the last 12 months, the insured person does not have any pre-existing medical condition which has required them to:",
+          "parameters": {
+            "lookback_period": "12 months",
+            "applies_to_cover": "TravelEasy\u00ae Pre-Ex cover",
+            "requirement_for_pre_existing_condition": "no pre-existing medical condition requiring intervention within lookback period"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "Any pre-existing medical condition unless covered under section 52 \u2013 Pre-Ex Critical Care. This includes any pre-existing medical condition that worsens within the 30 days before the start of the trip for which a doctor has advised to see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage. The insured person is following their treating doctor\u2019s advice for all their pre-existing medical condition.",
+          "parameters": {
+            "condition_type": "pre-existing medical condition",
+            "exclusion_trigger_worsening": "worsens within 30 days before the start of the trip",
+            "lookback_period_worsening": "30 days",
+            "management_requirement": "following their treating doctor\u2019s advice"
+          }
+        }
+      }
+    },
+    {
+      "condition": "child_accompaniment_requirement",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "Any insured child under the age of 12 years must be accompanied by a parent or adult guardian during the trip.",
+          "parameters": {
+            "maximum_unaccompanied_age": "12 years",
+            "accompanying_party_type": "parent or adult guardian",
+            "applies_during": "trip"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "Any insured child under the age of 12 years must be accompanied by a parent or adult guardian during the trip.",
+          "parameters": {
+            "age_threshold_for_accompaniment": "12 years",
+            "required_accompanying_person": "parent or adult guardian",
+            "applies_during": "the trip"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "Any insured child under the age of 12 years must be accompanied by a parent or adult guardian during the trip.",
+          "parameters": {
+            "maximum_unaccompanied_age": "12 years",
+            "required_accompaniment": "parent or adult guardian",
+            "applies_to": "insured child",
+            "applies_when": "during the trip"
+          }
+        }
+      }
+    },
+    {
+      "condition": "pre_existing_conditions",
+      "condition_type": "exclusion",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "(a) Any Pre-Existing Medical Conditions, including congenital conditions\n(e) pre-existing medical condition and its complications, regardless of whether it is resulting from COVID-19 infection",
+          "parameters": {
+            "scope": "includes congenital conditions",
+            "clarification": "applies regardless of whether resulting from COVID-19 infection"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "Any pre-existing medical condition unless covered under section 52 Pre-Ex Critical Care. In the last 12 months, the insured person does not have any pre-existing medical condition which has required them to: any pre-existing medical condition that worsens within the 30 days before the start of the trip for which a doctor has advised to see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage.",
+          "parameters": {
+            "general_exclusion_exception_section": "section 52 Pre-Ex Critical Care",
+            "lookback_period_for_no_condition": "12 months",
+            "pre_trip_worsening_condition_period": "30 days",
+            "exception_coverage_plans": [
+              "Pre-Ex Standard",
+              "Pre-Ex Elite",
+              "Pre-Ex Premier"
+            ],
+            "condition_for_covered_pre_ex": "The insured person is following their treating doctor pre-existing medical condition. This includes not refusing or delaying any monitoring, medical appointment, medical test, medication, treatment or surgery."
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "Any pre-existing medical condition unless covered under section 52 \u2013 Pre-Ex Critical Care. In the last 12 months, the insured person does not have any pre-existing medical condition which has required them to: any pre-existing medical condition that worsens within the 30 days before the start of the trip for which a doctor has advised to see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage. This does not include changes to prescribed medication or dosage for lowering blood cholesterol;",
+          "parameters": {
+            "general_exclusion_exception_section": "section 52 \u2013 Pre-Ex Critical Care",
+            "lookback_period_for_no_condition_required_treatment": "12 months",
+            "pre_trip_worsening_exclusion_period": "30 days",
+            "pre_trip_worsening_excluded_actions": "see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage",
+            "pre_trip_worsening_exclusion_exception": "changes to prescribed medication or dosage for lowering blood cholesterol",
+            "plans_with_pre_ex_sublimits": "Pre-Ex Standard, Pre-Ex Elite or Pre-Ex Premier plan"
+          }
+        }
+      }
+    },
+    {
+      "condition": "travel_advisory_exclusion",
+      "condition_type": "exclusion",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "4. Travel Exclusions",
+          "parameters": {}
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "Except for benefits extended under COVID-19 Cover under a single return trip policy or under an annual policy if COVID-19 Cover is selected and stated on the schedule or endorsement, this policy excludes any loss, damage, liability, expense, fines, penalties or any other amount directly or indirectly caused by, in connection with, or in any way involving or arising out of any of the following including any fear or threat thereof, whether actual or perceived:",
+          "parameters": {
+            "exclusion_trigger": "any fear or threat thereof, whether actual or perceived",
+            "exception_condition": "COVID-19 Cover selected and stated on the schedule or endorsement"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "As an exception to general exclusion 13(a), we will extend section 1 - Accidental death and permanent total disability of this policy to cover the insured person for death or bodily injury which may be suffered through war, riot, revolution or any similar event as long as no state of war exists in the country when the insured person travels there and that country is not the home of the insured person.",
+          "parameters": {
+            "exclusion_trigger_condition": "state of war exists in the country when the insured person travels there",
+            "events_related_to_exclusion": "war, riot, revolution or any similar event",
+            "country_restriction": "not the home of the insured person"
+          }
+        }
+      }
+    },
+    {
+      "condition": "awareness_of_circumstances",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "Cover is only valid if You purchase this Policy before You become aware of any possible situations that may lead to any claim on this Policy.",
+          "parameters": {
+            "timing_of_awareness": "before policy purchase",
+            "scope_of_awareness": "any possible situations that may lead to any claim on this Policy",
+            "examples_of_situations": [
+              "Hospitalisation of a Family Member",
+              "having received a terminal prognosis of a Family Member",
+              "any risk related to Your travel destinations",
+              "circumstances suggesting that You may be suffering from an Injury, Illness or disability"
+            ]
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "At the time of arranging the trip or taking out this insurance, neither you nor any other insured person is aware of any circumstances which are likely to lead to a claim under the policy.",
+          "parameters": {
+            "time_of_assessment": "At the time of arranging the trip or taking out this insurance",
+            "requirement": "neither you nor any other insured person is aware of any circumstances which are likely to lead to a claim under the policy"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "claims due to circumstances which you, the insured person or the travel companion knew before the purchase of this policy or trip that may lead to a claim under this policy;",
+          "parameters": {
+            "timing_of_awareness": "before the purchase of this policy or trip",
+            "parties_aware": "you, the insured person or the travel companion",
+            "nature_of_circumstance": "that may lead to a claim under this policy"
+          }
+        }
+      }
+    },
+    {
+      "condition": "pre_trip_purchased",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "Cover is only valid if You purchase this Policy before You become aware of any possible situations that may lead to any claim on this Policy. We will also not pay any claims in respect of: this Policy was purchased less than three (3) days before the commencement of Your trip.",
+          "parameters": {
+            "purchase_condition_awareness": "before becoming aware of possible claim situations",
+            "minimum_purchase_days_before_trip": "3 days"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "1. This insurance is bought more than three days before the start of the journey. policy was taken up or before the trip was booked (in the case of an annual plan).",
+          "parameters": {
+            "minimum_purchase_days_before_journey_start": "3 days",
+            "annual_plan_purchase_timing": "before trip booked"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "This policy must be purchased at least 3 days before the trip or earlier. This insurance is bought more than three days before the start of the journey. If a policy is purchased within 30 days before the scheduled departure date of the trip: policy was taken up or before the trip was booked (in the case of an annual plan).",
+          "parameters": {
+            "minimum_purchase_before_trip": "3 days",
+            "condition_for_sections_21_22_23_if_purchased_within": "30 days before scheduled departure date",
+            "annual_plan_purchase_condition": "before the trip was booked"
+          }
+        }
+      }
+    },
+    {
+      "condition": "declaration_of_previous_insurance",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "If an insured person has ever been refused cover or had special terms placed on them by any insurer for travel insurance, they must declare this at the point of application and We must accept them, or there will be no cover for them.",
+          "parameters": {
+            "declaration_trigger_conditions": [
+              "refused cover by any insurer for travel insurance",
+              "special terms placed by them by any insurer for travel insurance",
+              "claims history",
+              "insurance record",
+              "previous refusals to grant insurance coverage"
+            ],
+            "declaration_timing": "at the point of application",
+            "insurer_acceptance_required": true,
+            "consequence_of_non_compliance": "no cover"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "2. you have declared that you have broken any premium-payment for a previous policy taken up with another insurer in the last 12 months. You must have fully paid all outstanding premiums to the previous insurer based on the short period rate for the previous policy and we must have a copy of written confirmation from the previous insurer to prove this before our cover starts. 5. If an insured person has ever been refused cover or had special terms placed on them by any insurer for travel insurance, they must declare this at the point of application and we must accept them, or there will be no cover for them.",
+          "parameters": {
+            "premium_payment_declaration_condition": "declare if broken any premium-payment for a previous policy",
+            "premium_payment_lookback_period": "12 months",
+            "outstanding_premiums_payment_requirement": "fully paid all outstanding premiums to the previous insurer",
+            "outstanding_premiums_proof_requirement": "copy of written confirmation from the previous insurer",
+            "previous_cover_refusal_declaration_requirement": "declare if ever been refused cover or had special terms placed on them by any insurer for travel insurance",
+            "previous_cover_declaration_timing": "at the point of application",
+            "insurer_acceptance_condition": "we must accept them"
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "you have declared that you have broken any premium-payment for a previous policy taken up with another insurer in the last 12 months. You must have fully paid all outstanding premiums to the previous insurer based on the short period rate for the previous policy and we must have a copy of written confirmation from the previous insurer to prove this before our cover starts. If an insured person has ever been refused cover or had special terms placed on them by any insurer for travel insurance, they must declare this at the point of application and we must accept them, or there will be no cover for them.",
+          "parameters": {
+            "declaration_of_premium_payment_break": "required if broken any premium-payment for a previous policy",
+            "premium_payment_break_lookback_period": "12 months",
+            "outstanding_premiums_payment_status": "fully paid",
+            "proof_of_payment_required": "written confirmation from previous insurer",
+            "declaration_of_refused_cover_or_special_terms": "required if ever refused cover or had special terms by any insurer for travel insurance",
+            "declaration_timing": "at the point of application",
+            "insurer_acceptance": "required"
+          }
+        }
+      }
+    },
+    {
+      "condition": "medical_advice_and_treatment_restriction",
+      "condition_type": "eligibility",
+      "products": {
+        "Product A": {
+          "condition_exist": true,
+          "original_text": "The insured persons are not travelling against the advice of a doctor or for the purpose of getting medical treatment. At the time of Your trip, You must be medically fit to travel and not be aware of any circumstances which could lead to cancellation or disruption of the trip, otherwise Your claim will be rejected.",
+          "parameters": {
+            "requirement_1": "not travelling against the advice of a doctor",
+            "requirement_2": "not travelling for the purpose of getting medical treatment",
+            "requirement_3": "medically fit to travel",
+            "requirement_4": "not aware of any circumstances which could lead to cancellation or disruption of the trip"
+          }
+        },
+        "Product B": {
+          "condition_exist": true,
+          "original_text": "The insured persons are not travelling against the advice of a doctor or for the purpose of getting medical treatment. This also applies to any pre-existing medical condition that worsens within the 30 days before the start of the trip for which a doctor has advised to see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage.",
+          "parameters": {
+            "lookback_period_for_worsening_condition": "30 days",
+            "restriction_on_travel_against_medical_advice": true,
+            "restriction_on_travel_for_medical_treatment": true,
+            "worsening_condition_medical_advice_triggers": [
+              "see a medical specialist",
+              "undergo investigative test",
+              "surgery",
+              "change in treatment",
+              "prescribed medication or dosage"
+            ]
+          }
+        },
+        "Product C": {
+          "condition_exist": true,
+          "original_text": "The insured persons are not travelling against the advice of a doctor or for the purpose of getting medical treatment. Also, any pre-existing medical condition that worsens within the 30 days before the start of the trip for which a doctor has advised to see a medical specialist, undergo investigative test, surgery, or change in treatment, prescribed medication or dosage.",
+          "parameters": {
+            "restriction_on_travel_against_medical_advice": true,
+            "restriction_on_travel_for_medical_treatment": true,
+            "pre_existing_condition_worsening_lookback_period": "30 days before the start of the trip",
+            "pre_existing_condition_medical_advice_triggers": [
+              "see a medical specialist",
+              "undergo investigative test",
+              "surgery",
+              "change in treatment",
+              "change in prescribed medication or dosage"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
