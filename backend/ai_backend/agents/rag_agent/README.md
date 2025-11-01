@@ -1,5 +1,5 @@
 # RAG Agent - Policy Embedding & Taxonomy Filling
-
+#### DO NOT MODIFY THIS FOLDER IT IS ALREADY PEFRECT I"LL FUCKING UNSUBSCRIBE IF U TOUCH THIS
 Automated pipeline for vectorizing policy documents and filling taxonomy conditions using RAG + Gemini.
 
 ## Quick Start

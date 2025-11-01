@@ -1,0 +1,56 @@
+{
+  "user_id": "ray",
+  "created_at": "2025-11-01T03:34:12.471619",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "testing",
+      "timestamp": "2025-11-01T03:34:12.471605",
+      "metadata": {}
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I understand you're testing. Is there anything I can help you with today, perhaps related to travel insurance? Are you planning a trip soon? If so, tell me a bit about it! The more details you give me (dates, destinations, activities), the better I can help you figure out what kind of insurance coverage you might need.\n",
+      "timestamp": "2025-11-01T03:34:13.918697",
+      "metadata": {
+        "intent": "general",
+        "needs_extracted": false
+      }
+    },
+    {
+      "role": "user",
+      "content": "im going to japan",
+      "timestamp": "2025-11-01T03:34:24.575196",
+      "metadata": {}
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, Japan! That sounds exciting. To help me understand what kind of travel insurance you might need, could you tell me a bit more about your trip?\n\nFor example:\n\n*   **When are you going?** (Approximate dates or month/year is fine)\n*   **How long will you be there?**\n*   **What will you be doing?** (e.g., sightseeing, hiking, skiing, business, etc.)\n*   **Are you planning any adventurous activities?** (e.g., scuba diving, rock climbing)\n*   **Do you have any pre-existing medical conditions?**\n\nThe more details you can give me, the better I can assist you!\n",
+      "timestamp": "2025-11-01T03:34:26.377583",
+      "metadata": {
+        "intent": "general",
+        "needs_extracted": false
+      }
+    },
+    {
+      "role": "user",
+      "content": "\u001bquit",
+      "timestamp": "2025-11-01T03:34:51.905965",
+      "metadata": {}
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I understand you're quitting the conversation. If you change your mind and want help with travel insurance for your trip to Japan, just let me know! I'll be here to assist you. Have a great day!\n",
+      "timestamp": "2025-11-01T03:34:52.900035",
+      "metadata": {
+        "intent": "general",
+        "needs_extracted": false
+      }
+    }
+  ],
+  "coverage_needs": [],
+  "trip_summary": {},
+  "context": {},
+  "metadata": {},
+  "last_updated": "2025-11-01T03:34:52.900782"
+}

@@ -1,9 +1,8 @@
 """
 Database Module
-Provides TinyDB-based storage for user profiles and coverage needs
+Provides JSON file-based storage for user profiles and coverage needs
 """
 
-from .db_manager import DatabaseManager
-from .user_profile import UserProfileDB
+from .json_storage import JSONStorage
 
-__all__ = ['DatabaseManager', 'UserProfileDB']
+__all__ = ['JSONStorage']

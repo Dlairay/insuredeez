@@ -1,5 +1,6 @@
 # Database Dependencies
 # Install with: pip install -r requirements.txt
 
-# TinyDB for NoSQL document storage
-tinydb>=4.8.0
+# MongoDB for NoSQL document storage
+pymongo>=4.0.0
+dnspython>=2.0.0  # Required for MongoDB connection strings
