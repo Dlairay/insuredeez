@@ -1,6 +1,0 @@
-# Database Dependencies
-# Install with: pip install -r requirements.txt
-
-# MongoDB for NoSQL document storage
-pymongo>=4.0.0
-dnspython>=2.0.0  # Required for MongoDB connection strings

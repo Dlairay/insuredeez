@@ -149,10 +149,9 @@ All timestamps should follow ISO 8601 format
 The quoteId and offerId must be obtained from a prior quotation request
 
 
-2. policy recommendation agent
+<!-- 2. policy recommendation agent
 this agent has sub agents as well(so its conversation_agent>policy>recommendation_agent>{name}_agent), 
--coverage agent 
- looks at a db of past claim histories of the insurers database to suggest the coverage amount buyer might want to get from claims of people with similar plans in the pasr 
+
 -needs agent
  creates list of needs from the itinerary, it looks at this section of the profile, and flips the things it found in the itinerary to True for the conditions in the profile data structure artifact:
   taxonomy_dict = {
@@ -167,13 +166,7 @@ this agent has sub agents as well(so its conversation_agent>policy>recommendatio
     "activities_covered":False,
     "actual_telephone_charges_requirement":False, .........}}
 
-
--plan selector agent
- considers the outputs of both coverage recommendation agent, needs agent and READS (ONLY) Taxonomy_Filled.json to choose the fit (policy A, B, C) for the user
-
-3. query agent
-    uses Taxonomy_Filled.json as grounding source to compare the plans A,B,C when queried about
-
+ -->
 
 
 the rough guideline of what each agent should do is in their respective objective.md files if present. if there is a huge clash in logic of what i have defined here and in the objective.md, the instructions here take priority. 

@@ -8,43 +8,33 @@ from google.adk.sessions import InMemorySessionService
 from google.adk.runners import Runner
 from google.genai import types
 import warnings
-import logging
 from dotenv import load_dotenv
 import sys
 sys.path.append('/Users/ray/Desktop/hackdeez/backend/ai_backend/agents')
 
-from base_agent import create_agent
-from tools import get_user_data, fill_information, call_pricing_api, call_purchase_api
-from prompt import AGENT_DESCRIPTION, AGENT_INSTRUCTION
+from .tools import check_pipeline_status, get_user_data, fill_information, setup_insureds_from_counts, call_pricing_api, call_purchase_api, make_payment
+from .prompt import AGENT_DESCRIPTION, AGENT_INSTRUCTION
 
-#just makes the output less messy
+# Suppress warnings
 warnings.filterwarnings("ignore")
-logging.basicConfig(level=logging.CRITICAL)
-logging.getLogger('asyncio').setLevel(logging.CRITICAL)
-logging.getLogger('google').setLevel(logging.CRITICAL)
-logging.getLogger('google_genai').setLevel(logging.CRITICAL)
 
 load_dotenv()
-
-# Configure logging to suppress warnings
-warnings.filterwarnings("ignore")
-logging.basicConfig(level=logging.ERROR)
 
 # Set environment variable for Google API key
 os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
 
 # Import helper agents
-from helper_agents.document_magic_agent.agent import document_magic_agent
-from helper_agents.policy_recommendation_agent.agent import policy_recommendation_agent
-from helper_agents.query_agent.agent import query_agent
+from .helper_agents.document_magic_agent.agent import document_magic_agent
+from .helper_agents.policy_recommendation_agent.agent import policy_recommendation_agent
 
-# Create the main conversation agent using the base factory
-conversation_agent = create_agent(
+# Create the main conversation agent directly (no factory needed)
+conversation_agent = Agent(
     name="conversation",
+    model="gemini-2.0-flash-exp",
     description="Travel insurance assistant that helps users find and buy insurance plans",
     instruction=AGENT_INSTRUCTION,
-    tools=[get_user_data, fill_information, call_pricing_api, call_purchase_api],
-    sub_agents=[document_magic_agent, policy_recommendation_agent, query_agent]
+    tools=[check_pipeline_status, get_user_data, fill_information, setup_insureds_from_counts, call_pricing_api, make_payment, call_purchase_api],
+    sub_agents=[document_magic_agent, policy_recommendation_agent]
 )
 
 # --- Session constants, needed to even run the agent even if its not used ---
@@ -55,15 +45,24 @@ SESSION_ID = "session_001"
 # --- Single call via Runner (same event loop pattern) ---
 async def call_agent_async(query: str, runner: Runner, user_id: str, session_id: str):
     print(f"\n>>> User Query: {query}")
+    print(f"[TRACE] Starting agent processing...")
+
     content = types.Content(role='user', parts=[types.Part(text=query)])
     final_response = "Agent did not produce a final response."
 
     async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=content):
+        # Log intermediate events
+        if hasattr(event, 'content') and event.content:
+            if hasattr(event.content, 'parts') and event.content.parts:
+                print(f"[TRACE] Intermediate response: {event.content.parts[0].text[:100]}...")
+
         if event.is_final_response():
             if event.content and event.content.parts:
                 final_response = event.content.parts[0].text
+                print(f"[TRACE] Final response received")
             elif getattr(event, 'actions', None) and event.actions.escalate:
                 final_response = f"Agent escalated: {event.error_message or 'No specific message.'}"
+                print(f"[TRACE] Agent escalated with error")
             break
 
     print(f"<<< Agent Response: {final_response}")
@@ -89,6 +88,13 @@ async def main():
     print("🛡️  Travel Insurance Assistant Started!")
     print("Ask me about travel insurance plans, upload documents, or get policy recommendations.")
     print("Type 'quit' to exit.")
+    print("\n" + "="*60)
+    print("🔍 LOGGING ENABLED:")
+    print("  - Tool calls (get_user_data, fill_information, etc.)")
+    print("  - API interactions (pricing, purchase)")
+    print("  - Agent orchestration events")
+    print("  - Sub-agent delegations")
+    print("="*60 + "\n")
 
     # Interactive chat loop
     while True:

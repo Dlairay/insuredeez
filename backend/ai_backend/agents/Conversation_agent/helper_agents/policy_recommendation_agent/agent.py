@@ -1,25 +1,17 @@
 """
 Policy Recommendation Agent
-Orchestrates needs, coverage, and plan selection to recommend the best insurance plan
+Has 3 tools: analyze needs (2-stage + DB), recommend coverage (real DB), select plan (taxonomy)
 """
 
-import sys
-sys.path.append('/Users/ray/Desktop/hackdeez/backend/ai_backend/agents')
-
-from base_agent import create_agent
-from .tools import consolidate_recommendation
+from google.adk.agents import Agent
+from .tools import analyze_itinerary_needs, recommend_coverage, select_best_plan
 from .prompt import AGENT_DESCRIPTION, AGENT_INSTRUCTION
 
-# Import the three sub-agents
-from .helper_agents.needs_agent.agent import needs_agent
-from .helper_agents.coverage_recommendatio_agent.agent import coverage_agent
-from .helper_agents.plan_selector_agent.agent import plan_selector_agent
-
-# Create the policy recommendation agent with its three sub-agents
-policy_recommendation_agent = create_agent(
+# Create the policy recommendation agent with all 3 tools (no sub-agents)
+policy_recommendation_agent = Agent(
     name="policy_recommendation",
+    model="gemini-2.0-flash-exp",
     description=AGENT_DESCRIPTION,
     instruction=AGENT_INSTRUCTION,
-    tools=[consolidate_recommendation],
-    sub_agents=[needs_agent, coverage_agent, plan_selector_agent]
+    tools=[analyze_itinerary_needs, recommend_coverage, select_best_plan]
 )
